@@ -1,82 +1,26 @@
-<!DOCTYPE html>
-<html>
 
-    <head>
-             <title> Website </title>
-             <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
-             <style type='text/css'>
-            body {
-              background-color: #31343f;
-              font-family: 'Indie Flower', cursive;
-              text-align: center;
-              padding: 100px;
-            }
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <title>Leaflet Quick Start Guide Example</title>
+   <meta charset="utf-8" />
 
-            h1 {
-              font-size: 50px;
-              color: #dedbde;
-            }
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-            h2 {
-              font-size: 30px;
-              margin-bottom: 20px;
-            }
+   <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+ </head>
+ <body>
+   <div id="map" style="width: 960px; height: 500px"></div>
 
-            #map {
-              width: 150px;
-              border-radius: 75px;
-              border: 5px solid #dedbde;
-            }
-
-            #about-me {
-              background-color: #353b45;
-              padding: 100px;
-              color: #c4c2c4;
-            }
-
-            #about-me p {
-              text-align: left;
-            }
-
-            #mylinks {
-              background-color: #49515e;
-              padding: 100px;
-              color: #c4c2c4;
-            }
-
-            #mylinks a {
-              color: #c4c2c4;
-              background-color: #31343f;
-              border-radius: 5px;
-              padding: 10px;
-              margin: 20px;
-              text-decoration: none;
-            }
-
-            #mylinks a:hover {
-              background-color: #c4c2c4;
-              color: #31343f;
-            }
-        </style>
-
-
-    </head>
-    <body>
-          <img src="imagemap.jpg" id = map />
-          <h1>World Map</h1>
-          <div id = "aboutme" >
-
-          </div>
-
-          <div id = "mylinks">
-           <h2> My Links </h2>
-           <a href="https://www.google.com/" > Randomlink </a>
-           <a> Google </a>
-
-
-          </div>
-
-
-    </body>
-
+   <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+   <script>
+     var map = L.map('map').setView([51.505, -0.09], 13);
+     L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+         attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
+         maxZoom: 18,
+         id: 'mapbox.streets',
+         accessToken: 'pk.eyJ1Ijoib2JtZ2lzIiwiYSI6ImNqZHhlbHM2OTRpcXAzNHFoNnZybTJ5eXkifQ.QIE_ydqNG_0P9S22ZGKfOA'
+     }).addTo(mymap);
+  </script>
+</body>
 </html>
